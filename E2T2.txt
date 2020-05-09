@@ -1,0 +1,20 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+The use of a non-root account is not enforced.
+The IAM password policy is not specified.
+CloudTrail Trail is not specified.
+Loadbalancer does not redirect HTTP to HTTPS requests.
+IAM policy is too loose, allowing '*' full administrative rights.
+VPC Security Groups allow all ingress and egress traffic.
+Process 'sshd' is listening on port 22 on the EC2 instance.
+TCP port 5000 is reachable from the internet on the EC2 instance.
+S3 bucket logging not enabled.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+Set IAM policies for not allowing root user and to enforce MFA.
+Specify a more rigorous IAM password policy.
+Create a CloudTrail that is stored on S3.
+Limit the traffic on the Loadbalancer, redirecting HTTP to HTTPS requests.
+Tighten up the IAM policy.
+Limit the traffic on the Security Groups.
+Close port 22 and all other non-necessary ports on the EC2 instance.
+Enable S3 bucket logging.
