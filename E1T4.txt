@@ -1,6 +1,8 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
+The Web Service Instance is in the public subnet, has port 5000 open to the internet, and no HTTPS port 443 open.
+Instead, the instance should be in the private subnet in order not to be exposed to the internet, use port 443 instead of port 80, and only allow communication on port 5000 from the AppLoadBalancerSG.
 The DefaultPrivateRoute1 and DefaultPrivateRoute2 tables have DestinationCidrBlock: 0.0.0.0/0
 That means if a resource within the private subnets gets under malicious control, it could communicate with any endpoint on the internet.
 
